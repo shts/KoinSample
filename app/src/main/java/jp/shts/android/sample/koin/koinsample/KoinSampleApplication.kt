@@ -11,9 +11,10 @@ class KoinSampleApplication: Application() {
 
         // single instance of HelloRepository
         single<HelloRepository> { HelloRepositoryImpl() }
+        single<GoodbyeRepository> { GoodbyeRepositoryImpl() }
 
         // MainViewModel ViewModel
-        viewModel { MainViewModel(get()) }
+        viewModel { MainViewModel(get(), get()) }
     }
 
     override fun onCreate() {
